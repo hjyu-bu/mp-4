@@ -1,6 +1,7 @@
 import Image from 'next/image';
+import type { ArtObject } from "@/types";
 
-export default function Art({art}:{art:object}) {
+export default function Art({art}:{art:ArtObject}) {
 
     return (
         <div className="max-w-sm bg-white rounded-lg shadow-md overflow-hidden">

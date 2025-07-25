@@ -1,8 +1,9 @@
 "use server";
+import {ArtObject} from "@/types";
 
 const API_KEY = process.env.API_KEY;
 
-export default async function getArts(query:string):Promise<Any[]>|undefined|null {
+export default async function getArts(query:string):Promise<ArtObject[] | undefined | null> {
     try {
         if (!query) return null;
 

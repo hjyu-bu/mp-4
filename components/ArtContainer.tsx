@@ -1,6 +1,7 @@
 import getArts from "@/lib/getArts";
 import Art from "@/components/Art";
 import Link from "next/link";
+import type { ArtObject } from "@/types";
 
 export default async function ArtContainer({category}:{category:string}) {
 
@@ -19,7 +20,7 @@ export default async function ArtContainer({category}:{category:string}) {
         )
     }
 
-    result = result.filter((art) => art.primaryimageurl)
+    result = result.filter((art:ArtObject) => art.primaryimageurl)
 
     return (
         <div id="resultsSection">
@@ -32,7 +33,7 @@ export default async function ArtContainer({category}:{category:string}) {
 
             <div className="flex justify-center p-4">
                 <div id="iconGrid" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    { result.map((art) =>
+                    { result.map((art:ArtObject) =>
                         <Art key={art.objectnumber} art={art}/> )
                     }
                 </div>
